@@ -33,7 +33,20 @@ def fetchNeighbours(node):
 
 # You will be working on this part
 def searchGraph(start):
-    neighbours = fetchNeighbours(start)
-    print(str(neighbours)[1:-1])
+    visited = set()
+    result = []
+    queue = [start]
+    visited.add(start)
+    current_node = None
+
+    while queue != []:
+        current_node = queue.pop(0)
+        result.append(current_node)
+
+        for i in fetchNeighbours(current_node):
+            if i not in visited:
+                queue.append(i)
+                visited.add(i)
+    print(str(result)[1:-1])
 
 searchGraph(1)
