@@ -23,11 +23,12 @@ def fetchNeighbours(node):
 # 2 -> [1, 5]
 # 3 -> [1, 5]
 # 4 -> [1, 6]
-# 5 -> [2, 3, 7]
+# 5 -> [2, 3, 7, 8]
 # 6 -> [4, 7]
 # 7 -> [5, 6]
-# print: 1, 2, 3, 4, 5, 6, 7
-# Also this is valid: 1, 4, 3, 2, 6, 5, 7
+# 8 -> [5]
+# print: 1, 2, 3, 4, 5, 6, 7, 8
+# Also this is valid: 1, 4, 3, 2, 6, 5, 7, 8
 
 # You will be working on this part
 def searchGraph(start):
