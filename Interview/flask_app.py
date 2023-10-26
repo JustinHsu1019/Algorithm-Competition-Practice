@@ -30,7 +30,7 @@ def hello_world():
     return 'Service is ready!!!'
 
 @app.route('/TreeNode/get_neighbours', methods=['GET'])
-@limiter.limit("5 per minute")
+@limiter.limit("8 per minute")
 def get_neighbours_api():
     key = request.args.get('key')
 
