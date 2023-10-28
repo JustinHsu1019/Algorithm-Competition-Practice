@@ -1,14 +1,16 @@
 # https://zerojudge.tw/ShowProblem?problemid=b967
 
+from collections import deque
+
 def bfs(tree, start):
     visited = set()
-    queue = [(start, 0)]
+    queue = deque([(start, 0)])
     visited.add(start)
     current_distance = None
     current_node = None
     
     while queue:
-        current_node, current_distance = queue.pop(0)
+        current_node, current_distance = queue.popleft()
 
         for child in tree[current_node]:
             if child not in visited:
@@ -19,7 +21,7 @@ def bfs(tree, start):
 while True:
     try:
         how_many = int(input())
-    except:
+    except EOFError:
         break
     tree = {}
     for i in range(how_many):
@@ -29,6 +31,6 @@ while True:
         tree[a1].add(a2)
         tree[a2].add(a1)
 
-    _, node = bfs(tree, 0)
+    _, node = bfs(tree, how_many-1)
     distance, _ = bfs(tree, node)
     print(distance)

@@ -1,3 +1,5 @@
+# https://zerojudge.tw/ShowProblem?problemid=b967
+
 from collections import deque
 
 def bfs(tree, start):
