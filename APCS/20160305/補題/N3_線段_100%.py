@@ -1,3 +1,5 @@
+# https://zerojudge.tw/ShowProblem?problemid=b966
+
 while True:
     try:
         N = int(input())
