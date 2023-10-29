@@ -20,16 +20,31 @@ class Solution:
         while current:
             num2 += str(current.val)
             current = current.next
-        print(num1)
-        print(num2)
+        
+        total = str(int(num1[::-1]) + int(num2[::-1]))[::-1]
+
+        firstone = ListNode(total[0])
+        current = firstone
+
+        for i in total[1::]:
+            current.next = ListNode(int(i))
+            current = current.next
+
+        return firstone
         
 def main():
-    # Create two linked lists: l1 = 2 -> 4 -> 3 and l2 = 5 -> 6 -> 4
-    l1 = ListNode(2, ListNode(4, ListNode(3)))
-    l2 = ListNode(5, ListNode(6, ListNode(4)))
+    # Create two linked lists: l1 = 2 -> 4 -> 9 and l2 = 5 -> 6 -> 4 -> 9
+    l1 = ListNode(2, ListNode(4, ListNode(9)))
+    l2 = ListNode(5, ListNode(6, ListNode(4, ListNode(9))))
 
     s = Solution()
-    s.addTwoNumbers(l1, l2)
+    l3 = s.addTwoNumbers(l1, l2)
+    result = []
+    current = l3
+    while current:
+        result.append(str(current.val))
+        current = current.next
+    print(result)
 
 if __name__ == "__main__":
     main()
