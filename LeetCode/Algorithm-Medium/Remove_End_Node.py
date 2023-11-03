@@ -1,5 +1,7 @@
 # https://leetcode.com/problems/remove-nth-node-from-end-of-list
 
+# 進行中
+
 from typing import Optional
 
 # Definition for singly-linked list.
