@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/4sum
 
-# 未完成
+# 進行中
 
 from typing import List
 
