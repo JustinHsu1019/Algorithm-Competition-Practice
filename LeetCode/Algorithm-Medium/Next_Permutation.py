@@ -32,6 +32,8 @@ class Solution:
                             nums[0], nums[1], nums[2] = nums_temp[2], nums_temp[1], nums_temp[0]
                         else:
                             nums[0], nums[1], nums[2] = nums_temp[0], nums_temp[1], nums_temp[2]
+
+        # 提交時無須 return, 此處僅供測試使用
         return nums
 
 def main():
