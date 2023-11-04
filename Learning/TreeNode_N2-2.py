@@ -1,5 +1,7 @@
 # https://www.youtube.com/watch?v=BkszA-MvjXA&t=323s&ab_channel=HackBear%E6%B3%B0%E7%91%9E
 
+# 使用 collections deque popleft() --> O(1)
+# 使用 Python List pop(0) --> O(n)
 from collections import deque
 
 tree = {
