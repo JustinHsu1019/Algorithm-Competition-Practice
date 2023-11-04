@@ -3,5 +3,13 @@
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": []
+    "configurations": [
+        {
+            "type": "java",
+            "name": "N1_Score_100",
+            "request": "launch",
+            "mainClass": "N1_Score_100",
+            "projectName": "Algorithm-Competition-Practice_50e8fdb7"
+        }
+    ]
 }

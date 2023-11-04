@@ -10,7 +10,7 @@ public class N1_Score_100 {
         ArrayList<Integer> studentList, great, nope;
 
         while (scanner.hasNextInt()) {
-            int studentNum = scanner.nextInt();
+            scanner.nextInt();
             scanner.nextLine();
             studentList = new ArrayList<>();
             great = new ArrayList<>();
