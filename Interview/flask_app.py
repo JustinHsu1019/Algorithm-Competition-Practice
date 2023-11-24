@@ -1,6 +1,6 @@
 # https://justinhsu.pythonanywhere.com
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, redirect
 from flask_limiter import Limiter, util
 
 app = Flask(__name__)
@@ -22,12 +22,12 @@ tree = {
 }
 
 @app.route('/')
-def hello_world_main():
-    return 'Hello World!!!'
+def main_root():
+    return redirect("https://justinhsu1019.github.io", code=302)
 
 @app.route('/TreeNode/')
-def hello_world():
-    return 'Service is ready!!!'
+def TreeNode_root():
+    return redirect("https://justinhsu1019.github.io", code=302)
 
 @app.route('/TreeNode/get_neighbours', methods=['GET'])
 @limiter.limit("8 per minute")
