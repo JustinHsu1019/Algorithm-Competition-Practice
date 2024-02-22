@@ -20,6 +20,11 @@ class TreeNode:
 	def __repr__(self):
 		return f"TreeNode(val={self.val}, left={self.left}, right={self.right})"
 
+class Node:
+	def __init__(self, data):
+		self.data = data
+		self.next = None
+
 # BFS
 def get_allB(root):
 	result = []
@@ -142,21 +147,66 @@ def binary_search(arrr, target):
 	return -1
 
 # Linked List
-# 未完成
-def linked_list():
-    return 0
+class LinkedList:
+	def __init__(self):
+		self.head = None
+
+	def append(self, key):
+		new_node = Node(key)
+		if self.head == None:
+			self.head = new_node
+			return
+		current = self.head
+		while current.next:
+			current = current.next
+
+		current.next = new_node
+		return
+
+	def display(self):
+		current = self.head
+		while current:
+			print(current.data)
+			current = current.next
+		print("None")
+		return
+
+	def delete(self, key):
+		current = self.head
+		if current and key == current.data:
+			self.head = current.next
+			return
+
+		prev = None
+		while current and current.data != key:
+			prev = current
+			current = current.next
+
+		if current == None:
+			return
+
+		prev.next = current.next
+		return
 
 # main
 if __name__ == "__main__":
+	# BFS
 	print(get_allB("1"))
+
+	# DFS
 	print(get_allD("1"))
+
+	# binary tree basic
 	print(binaryt())
 
+	# binary tree advanced
 	root, target = list_to_tree(array), 3
 	print(search_binary_tree(root, target))
 
+	# linear search
 	print(linears(2))
 
+	# binary search
 	index = binary_search(array, 3)
 	if index != -1:
 		print(f"Found target 3 at index {index}.")
@@ -164,4 +214,13 @@ if __name__ == "__main__":
 		print(f"Target 3 not found in the array.")
 
 	# linked list playground
-	test = linked_list()
+	llist = LinkedList()
+	llist.append(1)
+	llist.append(2)
+	llist.append(3)
+	print("原始鏈表:")
+	llist.display()
+
+	llist.delete(1)
+	print("刪除節點後的鏈表:")
+	llist.display()
